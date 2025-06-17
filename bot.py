@@ -88,11 +88,11 @@ async def merge_segments_ffmpeg(segment_files, output_path):
 
 @app.on_message(filters.command("start"))
 async def start_cmd(client, message: Message):
-    await message.reply(HELP_TEXT, parse_mode="Markdown")
+    await message.reply(HELP_TEXT, parse_mode="markdown")
 
 @app.on_message(filters.command("help"))
 async def help_cmd(client, message: Message):
-    await message.reply(HELP_TEXT, parse_mode="Markdown")
+    await message.reply(HELP_TEXT, parse_mode="markdown")
 
 @app.on_message(filters.private | filters.group | filters.channel)
 async def handle_message(client, message: Message):
