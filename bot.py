@@ -27,10 +27,10 @@ app = Client(
 )
 
 HELP_TEXT = (
-    "👋 *Welcome!*\n\n"
-    "Send me an `.m3u8` playlist URL or a direct video download link.\n"
+    "👋 <b>Welcome!</b>\n\n"
+    "Send me an <code>.m3u8</code> playlist URL or a direct video download link.\n"
     "I'll download, merge, and upload the video (max 2GB).\n\n"
-    "*Commands:*\n"
+    "<b>Commands:</b>\n"
     "/start - Show welcome message\n"
     "/help - Show this help\n"
 )
@@ -88,11 +88,11 @@ async def merge_segments_ffmpeg(segment_files, output_path):
 
 @app.on_message(filters.command("start"))
 async def start_cmd(client, message: Message):
-    await message.reply(HELP_TEXT, parse_mode="markdown")
+    await message.reply(HELP_TEXT, parse_mode="HTML")
 
 @app.on_message(filters.command("help"))
 async def help_cmd(client, message: Message):
-    await message.reply(HELP_TEXT, parse_mode="markdown")
+    await message.reply(HELP_TEXT, parse_mode="HTML")
 
 @app.on_message(filters.private | filters.group | filters.channel)
 async def handle_message(client, message: Message):
